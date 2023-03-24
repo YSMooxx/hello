@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 void main() { 
-  yibuTest5();
+  yibuTest6();
 }
 // 1.Future.then
 void yibuTest1() {
@@ -69,5 +69,30 @@ void yibuTest5() {
     print(results[0]+results[1]);
   }).catchError((e){
     print(e);
+  });
+}
+
+//5.Stream
+void yibuTest6() {
+
+  Stream.fromFutures([
+  // 1秒后返回结果
+    Future.delayed(const Duration(seconds: 1), () {
+      return "hello 1";
+    }),
+    // 抛出一个异常
+    Future.delayed(const Duration(seconds: 2),(){
+      throw AssertionError("Error");
+    }),
+    // 3秒后返回结果
+    Future.delayed(const Duration(seconds: 3), () {
+      return "hello 3";
+    })
+  ]).listen((data){
+    print(data);
+  }, onError: (e){
+    print(e.message);
+  },onDone: (){
+
   });
 }
