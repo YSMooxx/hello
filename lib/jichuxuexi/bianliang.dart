@@ -35,10 +35,8 @@ dynamic a;
 Object b = "";
 printLengths() {
   // 正常
-  // ignore: avoid_print
   // print(a.length);
   // 报错 The getter 'length' is not defined for the class 'Object'
-  // ignore: avoid_print
   // print(b.length);
 }
 
