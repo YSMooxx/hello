@@ -1,4 +1,7 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
+import 'package:hello/%E7%AC%AC%E4%B8%80%E4%B8%AAFlutter%E5%BA%94%E7%94%A8/2.2%20Widget/2.2.5%20%E5%9C%A8%20widget%20%E6%A0%91%E4%B8%AD%E8%8E%B7%E5%8F%96State%E5%AF%B9%E8%B1%A1.dart';
 
 void main() {
   runApp(const MyApp1());
@@ -25,7 +28,7 @@ class MyApp1 extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Hello Flutter'),
+      home: const MyHomePage(title: "hello"),
     );
   }
 }
@@ -51,10 +54,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter1 = 0;
 
-  printInteger(int aNumber) {
-
-    _counter1++;
-  }
+  // ignore: unused_element
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -63,10 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter1++;
-      // printInteger(_counter1);
-      printInteger(_counter1);
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -113,10 +112,29 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.push(
+            context,
+            // MaterialPageRoute(builder: (context) => Echo(text: "nextFlutter")),
+            // ignore: prefer_const_constructors
+            MaterialPageRoute(builder: (context) =>  GetStateObjectRoute()),
+          );
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    print("deactivate");
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print("dispose");
   }
 }
