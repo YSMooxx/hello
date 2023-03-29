@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:hello/%E7%AC%AC%E4%B8%80%E4%B8%AAFlutter%E5%BA%94%E7%94%A8/2.2%20Widget/2.2.5%20%E5%9C%A8%20widget%20%E6%A0%91%E4%B8%AD%E8%8E%B7%E5%8F%96State%E5%AF%B9%E8%B1%A1.dart';
+import 'package:hello/%E7%AC%AC%E4%B8%80%E4%B8%AAFlutter%E5%BA%94%E7%94%A8/2.2%20Widget/2.2.7%20Flutter%20SDK%E5%86%85%E7%BD%AE%E7%BB%84%E4%BB%B6%E5%BA%93%E4%BB%8B%E7%BB%8D.dart';
 
 void main() {
   runApp(const MyApp1());
@@ -108,6 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter1',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            // const CustomWidget(),
           ],
         ),
       ),
@@ -117,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
             context,
             // MaterialPageRoute(builder: (context) => Echo(text: "nextFlutter")),
             // ignore: prefer_const_constructors
-            MaterialPageRoute(builder: (context) =>  GetStateObjectRoute()),
+            MaterialPageRoute(builder: (context) =>  CupertinoTestRoute()),
           );
         },
         tooltip: 'Increment',
